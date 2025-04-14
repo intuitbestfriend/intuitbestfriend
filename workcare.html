@@ -2,67 +2,64 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>재직자 프로그램 신청</title>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Pretendard', sans-serif;
-      background: url('https://images.unsplash.com/photo-1556761175-129418cb2dfe?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-      color: white;
-    }
-
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.6);
-      min-height: 100vh;
+      font-family: 'Gowun Dodum', sans-serif;
+      background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      color: #fff;
+      height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      padding: 40px;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
+      justify-content: center;
       text-align: center;
     }
-
-    p {
-      font-size: 1.1rem;
-      text-align: center;
-      max-width: 600px;
-      margin-bottom: 30px;
-    }
-
-    form {
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 20px;
+    .box {
+      background-color: rgba(0, 0, 0, 0.65);
+      padding: 30px;
       border-radius: 10px;
-      width: 100%;
-      max-width: 500px;
     }
-
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-
-    input, button {
-      width: 100%;
+    input {
       padding: 10px;
-      margin-top: 8px;
-      border-radius: 5px;
-      border: none;
-      font-size: 1rem;
+      border-radius: 6px;
+      margin-top: 10px;
     }
-
-    input[type="file"] {
-      background-color: #fff;
-    }
-
     button {
-      margin-top: 20px;
+      margin-top: 15px;
+      padding: 10px 20px;
       background-color: #f59e0b;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+    }
+    a.home {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      background: #f59e0b;
+      padding: 8px 12px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="home">홈으로</a>
+  <div class="box">
+    <h1>재직자 프로그램 신청</h1>
+    <p>워크케어 솔루션은 직장인의 감정 회복과 역량 향상을 돕는 맞춤형 프로그램입니다.<br>
+    공무원 포함 모든 재직자가 신청할 수 있으며, 아래 정보를 입력하시면 견적서 상담을 도와드립니다.</p>
+    <input type="text" placeholder="회사명 / 기관명"><br>
+    <input type="text" placeholder="담당자 이름"><br>
+    <input type="text" placeholder="전화번호"><br>
+    <button>견적 상담 신청하기</button>
+    <p style="margin-top:10px;">※ 입력하신 개인정보는 안전하게 보호되며 외부에 노출되지 않습니다.</p>
+  </div>
+</body>
+</html>
