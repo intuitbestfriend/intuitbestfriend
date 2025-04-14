@@ -2,8 +2,8 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>나를 위한 대화 체험</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>나를 위한 대화</title>
   <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
   <style>
     body, html {
@@ -16,7 +16,7 @@
     .hero {
       position: relative;
       height: 100vh;
-      background: url('https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      background: url('https://images.unsplash.com/photo-1600880292089-90a7e086ee7e?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -35,33 +35,36 @@
 
     .content {
       z-index: 1;
-      max-width: 800px;
+      max-width: 900px;
     }
 
     h1 {
-      font-size: 1.4rem;
-      font-weight: bold;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 30px;
     }
 
     p {
-      font-size: 1.4rem;
-      line-height: 1.6;
-      margin-top: 20px;
+      font-size: 2rem;
+      margin-bottom: 40px;
     }
 
-    input, button {
-      font-size: 1.2rem;
-      padding: 12px;
-      margin-top: 20px;
-      width: 80%;
-      max-width: 400px;
+    input {
+      font-size: 1.6rem;
+      padding: 14px;
+      width: 280px;
+      border-radius: 10px;
       border: none;
-      border-radius: 6px;
+      margin-bottom: 20px;
     }
 
     button {
+      font-size: 1.6rem;
+      padding: 14px 28px;
       background-color: #f59e0b;
       color: white;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
     }
 
@@ -69,10 +72,10 @@
       background-color: #d97706;
     }
 
-    .privacy {
+    .note {
+      font-size: 1.2rem;
       margin-top: 20px;
-      font-size: 1rem;
-      color: #ddd;
+      opacity: 0.8;
     }
 
     .home-link {
@@ -85,7 +88,8 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1rem;
+      font-size: 1.2rem;
+      z-index: 10;
     }
   </style>
 </head>
@@ -96,10 +100,10 @@
     <div class="content">
       <h1>나를 위한 대화 체험하기</h1>
       <p>당신의 감각을 깨우는 체험을 시작해보세요.<br>전화번호를 입력하시면 바로 체험이 가능합니다.</p>
-      <input type="tel" placeholder="전화번호를 입력하세요" />
-      <br />
+      <input type="text" placeholder="전화번호를 입력하세요">
+      <br>
       <button>체험 시작하기</button>
-      <p class="privacy">※ 입력하신 개인정보는 안전하게 보호되며 외부에 노출되지 않습니다.</p>
+      <div class="note">※ 입력하신 개인정보는 안전하게 보호되며 외부에 노출되지 않습니다.</div>
     </div>
   </div>
 </body>
