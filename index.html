@@ -9,52 +9,41 @@
     body {
       margin: 0;
       font-family: 'Nanum Myeongjo', serif;
-      background-color: #fff8f1;
-      color: #4b2e2e;
+      background-color: #fffdfb;
+      color: #3c2e2e;
       overflow-x: hidden;
     }
 
     .hero {
-      position: relative;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       padding: 2rem;
-    }
-
-    .bg-slide {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
+      background: linear-gradient(to bottom, #fffefb, #fff3ea);
+      background-image: url('https://images.pexels.com/photos/8709026/pexels-photo-8709026.jpeg?auto=compress&cs=tinysrgb&h=1000');
       background-size: cover;
       background-position: center;
-      animation: bgChange 20s infinite;
     }
 
-    @keyframes bgChange {
-      0%   { background-image: url('https://source.unsplash.com/1600x900/?family'); }
-      33%  { background-image: url('https://source.unsplash.com/1600x900/?friends'); }
-      66%  { background-image: url('https://source.unsplash.com/1600x900/?colleagues'); }
-      100% { background-image: url('https://source.unsplash.com/1600x900/?family'); }
+    .overlay {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 2rem;
+      border-radius: 20px;
+      backdrop-filter: blur(4px);
     }
 
     .changing-text {
-      font-size: 2em;
-      padding: 1rem 2rem;
-      background-color: rgba(255, 248, 241, 0.7);
-      border-radius: 15px;
-      transition: opacity 1s ease;
+      font-size: 1.8em;
+      margin-bottom: 2rem;
+      min-height: 3em;
     }
 
     .menu {
-      margin-top: 2rem;
       display: flex;
-      gap: 2rem;
+      gap: 1.5rem;
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -76,6 +65,7 @@
     section {
       padding: 80px 20px;
       text-align: center;
+      display: none;
     }
 
     .section-image {
@@ -83,13 +73,17 @@
       max-width: 600px;
       border-radius: 12px;
       margin: 1rem auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
 
     .section-text {
       font-size: 1.2em;
       margin-top: 1rem;
-      color: #5e3e3e;
+      color: #4f3d3d;
+    }
+
+    .visible {
+      display: block;
     }
   </style>
 </head>
@@ -97,18 +91,19 @@
 
   <!-- 첫 화면 -->
   <div class="hero">
-    <div class="bg-slide"></div>
-    <h1 class="changing-text" id="animated-text">지금, 당신에게 필요한 건 따뜻한 연결입니다.</h1>
-    <div class="menu">
-      <a href="#personal">나를 위한 대화</a>
-      <a href="#workcare">워크케어 솔루션</a>
+    <div class="overlay">
+      <h1 class="changing-text" id="animated-text">지금, 당신에게 필요한 건 따뜻한 연결입니다.</h1>
+      <div class="menu">
+        <a href="#" onclick="showSection('personal')">나를 위한 대화</a>
+        <a href="#" onclick="showSection('workcare')">워크케어 솔루션</a>
+      </div>
     </div>
   </div>
 
   <!-- 개인 상담 섹션 -->
   <section id="personal">
     <h2>나를 위한 대화</h2>
-    <img class="section-image" src="https://source.unsplash.com/800x500/?student,book,happy" alt="학생 감성 이미지">
+    <img class="section-image" src="https://images.pexels.com/photos/8613080/pexels-photo-8613080.jpeg?auto=compress&cs=tinysrgb&h=500" alt="학생 감성 이미지">
     <div class="section-text">
       어린이부터 청소년, 누구든 혼자 있고 싶은 날이 있죠.<br>
       나만을 위한 대화, 지금 Best Friend와 함께해보세요.
@@ -116,9 +111,9 @@
   </section>
 
   <!-- 재직자 워크케어 섹션 -->
-  <section id="workcare" style="background: #fff0e6;">
+  <section id="workcare">
     <h2>워크케어 솔루션</h2>
-    <img class="section-image" src="https://source.unsplash.com/800x500/?office,people,talk" alt="직장 이미지">
+    <img class="section-image" src="https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&h=500" alt="직장 이미지">
     <div class="section-text">
       함께 일하는 동료들 사이에도 감정은 존재합니다.<br>
       정서적 회복을 통한 몰입 향상, 조직 문화 개선까지.<br>
@@ -126,7 +121,6 @@
     </div>
   </section>
 
-  <!-- 텍스트 순환 스크립트 -->
   <script>
     const texts = [
       "지금, 당신에게 필요한 건 따뜻한 연결입니다.",
@@ -145,11 +139,18 @@
         el.innerText = texts[i];
         el.style.opacity = 1;
         i = (i + 1) % texts.length;
-      }, 500);
+      }, 300);
     }
 
     rotateText();
     setInterval(rotateText, 5000);
+
+    function showSection(sectionId) {
+      document.getElementById('personal').classList.remove('visible');
+      document.getElementById('workcare').classList.remove('visible');
+      document.getElementById(sectionId).classList.add('visible');
+      window.scrollTo({ top: document.getElementById(sectionId).offsetTop, behavior: 'smooth' });
+    }
   </script>
 
 </body>
