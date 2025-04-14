@@ -2,99 +2,86 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>나를 위한 대화 체험</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Intuit Best Friend</title>
   <style>
-    body {
+    body, html {
       margin: 0;
       padding: 0;
-      background-image: url('https://images.unsplash.com/photo-1505483531331-fc3cf89fd382?auto=format&fit=crop&w=1600&q=80');
-      background-size: cover;
-      background-position: center;
-      font-family: sans-serif;
-      color: #4a3f2b;
-    }
-
-    .overlay {
-      background-color: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(4px);
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
       height: 100%;
+      font-family: 'Pretendard', sans-serif;
     }
-
-    .container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1505483531331-fc3cf89fd382?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: #fff;
       text-align: center;
-      max-width: 400px;
+    }
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+    .content {
+      z-index: 1;
       padding: 20px;
     }
-
-    h1 {
+    .main-text {
       font-size: 2.5rem;
-      color: #d97706;
-      animation: fadeInDown 2s ease-out forwards;
+      font-weight: bold;
+      animation: fadeIn 3s ease-in-out forwards;
     }
-
-    p {
-      font-size: 1.1rem;
-      margin: 20px 0;
-      animation: fadeIn 3s ease-out forwards;
+    .sub-text {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      animation: fadeIn 4s ease-in-out forwards;
     }
-
-    input, button {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 12px;
-      font-size: 1rem;
-    }
-
-    button {
-      background-color: #f59e0b;
-      border: none;
-      color: white;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #d97706;
-    }
-
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      0% {opacity: 0; transform: translateY(20px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+    .buttons {
+      margin-top: 30px;
+    }
+    .btn {
+      margin: 0 10px;
+      padding: 12px 24px;
+      background-color: #f59e0b;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #d97706;
     }
   </style>
 </head>
 <body>
-  <div class="overlay"></div>
-  <div class="container">
-    <h1>나를 위한 대화 체험하기</h1>
-    <p>
-      당신의 감각을 깨우는 체험을 시작해보세요. <br />
-      전화번호를 입력하시면 바로 체험이 가능합니다.
-    </p>
-    <input type="tel" placeholder="전화번호를 입력하세요" />
-    <button>체험 시작하기</button>
-    <p style="font-size: 0.8rem; color: #555;">
-      ※ 입력하신 개인정보는 안전하게 보호되며 외부에 노출되지 않습니다.
-    </p>
+  <div class="hero">
+    <div class="overlay"></div>
+    <div class="content">
+      <div class="main-text">지금 이 순간, 당신에게 가장 필요한 건<br>‘내면의 강력한 힘’입니다.</div>
+      <div class="sub-text">
+        Best Friend는 당신 안의 감각을 깨워<br>
+        생각보다 강한 내면의 힘을 회복하게 합니다.<br><br>
+        지금, 가장 친한 친구와 대화해보세요.<br>
+        무한한 잠재력과 직접 마주해 보세요.<br>
+        내재되어 있던 강력한 힘이 저절로 깨어납니다.
+      </div>
+      <div class="buttons">
+        <a href="self.html" class="btn">개인 체험하기</a>
+        <a href="workcare.html" class="btn">재직자 프로그램</a>
+      </div>
+    </div>
   </div>
 </body>
 </html>
