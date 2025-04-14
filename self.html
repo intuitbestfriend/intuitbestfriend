@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>개인 체험하기</title>
+  <title>개인 체험</title>
   <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
   <style>
     body, html {
@@ -11,50 +11,67 @@
       padding: 0;
       height: 100%;
       font-family: 'Gowun Dodum', sans-serif;
-      background: url('https://images.unsplash.com/photo-1604079628043-943b804c6ea2?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-      color: #fff;
     }
-    .container {
+
+    .hero {
       position: relative;
       height: 100vh;
+      background: url('https://images.unsplash.com/photo-1600195077909-e04c0f1abb06?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
+      color: #fff;
       text-align: center;
-      padding: 20px;
+      padding: 0 20px;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
       background-color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
     }
+
+    .content {
+      z-index: 1;
+      max-width: 800px;
+    }
+
     h1 {
-      font-size: 4rem;
-      margin-bottom: 1rem;
+      font-size: 2.8rem;
+      margin-bottom: 30px;
     }
+
     p {
-      font-size: 2rem;
-      margin-bottom: 2rem;
+      font-size: 2.8rem;
+      margin-bottom: 50px;
     }
+
     input {
-      font-size: 1.6rem;
-      padding: 10px;
-      margin-bottom: 1.5rem;
-      border: none;
-      border-radius: 6px;
-      width: 250px;
-    }
-    button {
+      padding: 14px;
       font-size: 1.8rem;
-      padding: 12px 24px;
+      width: 80%;
+      max-width: 400px;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 16px 40px;
+      font-size: 1.8rem;
       background-color: #f59e0b;
       color: white;
       border: none;
-      border-radius: 6px;
+      border-radius: 10px;
       cursor: pointer;
     }
-    .privacy {
-      margin-top: 1rem;
-      font-size: 1.4rem;
-      color: #fcd34d;
+
+    button:hover {
+      background-color: #d97706;
     }
+
     .home-link {
       position: fixed;
       top: 20px;
@@ -65,19 +82,29 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
+      z-index: 10;
+    }
+
+    .note {
+      margin-top: 20px;
+      font-size: 1.4rem;
+      color: #eee;
     }
   </style>
 </head>
 <body>
   <a href="index.html" class="home-link">홈으로</a>
-  <div class="container">
-    <h1>나를 위한 대화 체험하기</h1>
-    <p>당신의 감각을 깨우는 체험을 시작해보세요.<br>전화번호를 입력하시면 바로 체험이 가능합니다.</p>
-    <input type="tel" placeholder="전화번호를 입력하세요">
-    <br>
-    <button>체험 시작하기</button>
-    <p class="privacy">※ 입력하신 개인정보는 안전하게 보호되며 외부에 노출되지 않습니다.</p>
+  <div class="hero">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>나를 위한 대화 체험하기</h1>
+      <p>당신의 감각을 깨우는 체험을 시작해보세요.<br>전화번호를 입력하시면 바로 체험이 가능합니다.</p>
+      <input type="tel" placeholder="전화번호를 입력하세요" />
+      <br />
+      <button>체험 시작하기</button>
+      <div class="note">※ 입력하신 개인정보는 안전하게 보호되며 외부에 노출되지 않습니다.</div>
+    </div>
   </div>
 </body>
 </html>
