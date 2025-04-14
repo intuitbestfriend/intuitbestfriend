@@ -2,156 +2,62 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Intuit Best Friend</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IBF - Intuit Best Friend</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Nanum Myeongjo', serif;
-      background-color: #fffdfb;
-      color: #3c2e2e;
-      overflow-x: hidden;
+    @keyframes fade-in {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 2rem;
-      background: linear-gradient(to bottom, #fffefb, #fff3ea);
-      background-image: url('https://images.pexels.com/photos/8709026/pexels-photo-8709026.jpeg?auto=compress&cs=tinysrgb&h=1000');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .overlay {
-      background: rgba(255, 255, 255, 0.8);
-      padding: 2rem;
-      border-radius: 20px;
-      backdrop-filter: blur(4px);
-    }
-
-    .changing-text {
-      font-size: 1.8em;
-      margin-bottom: 2rem;
-      min-height: 3em;
-    }
-
-    .menu {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .menu a {
-      padding: 1rem 2rem;
-      background: #6e4b4b;
-      color: #fff;
-      border-radius: 10px;
-      text-decoration: none;
-      font-size: 1.1rem;
-      transition: background 0.3s ease;
-    }
-
-    .menu a:hover {
-      background: #5c3a3a;
-    }
-
-    section {
-      padding: 80px 20px;
-      text-align: center;
-      display: none;
-    }
-
-    .section-image {
-      width: 90%;
-      max-width: 600px;
-      border-radius: 12px;
-      margin: 1rem auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-
-    .section-text {
-      font-size: 1.2em;
-      margin-top: 1rem;
-      color: #4f3d3d;
-    }
-
-    .visible {
-      display: block;
+    .animate-fade-in {
+      animation: fade-in 1.5s ease-out forwards;
     }
   </style>
 </head>
-<body>
-
+<body class="bg-white text-gray-900">
   <!-- 첫 화면 -->
-  <div class="hero">
-    <div class="overlay">
-      <h1 class="changing-text" id="animated-text">지금, 당신에게 필요한 건 따뜻한 연결입니다.</h1>
-      <div class="menu">
-        <a href="#" onclick="showSection('personal')">나를 위한 대화</a>
-        <a href="#" onclick="showSection('workcare')">워크케어 솔루션</a>
+  <section class="relative w-full h-screen overflow-hidden">
+    <!-- 오른쪽 배경 이미지 -->
+    <div class="absolute right-0 top-0 w-1/2 h-full bg-cover bg-center opacity-30"
+         style="background-image: url('/path/to/your/background.jpg');"></div>
+
+    <!-- 텍스트 내용 -->
+    <div class="relative z-10 flex flex-col justify-center h-full pl-12 pr-6 max-w-2xl space-y-6 animate-fade-in">
+      <h1 class="text-5xl font-bold leading-snug text-gray-900 transition duration-1000">
+        지금 이 순간,<br>당신에게 가장 필요한 건<br>
+        <span class="text-indigo-600">‘내면의 강력한 힘’</span>입니다.
+      </h1>
+
+      <p class="text-xl text-gray-700 leading-relaxed">
+        Best Friend는 당신 안의 감각을 깨워,<br>
+        생각보다 강한 내면의 힘을 회복하게 합니다.<br><br>
+        부모님의 열등감 해소가<br>
+        자녀의 학업 성취에 영향을 줍니다.<br>
+        자녀가 학업에 집중하려면<br>
+        부모의 양육 자세를 반드시 개선해야 합니다.
+      </p>
+
+      <p class="text-lg text-gray-600">
+        스스로 집중하고, 스스로 회복하고,<br>
+        마침내 스스로 나아갈 수 있도록.<br>
+        지금, 가장 친한 친구와 대화해보세요.<br>
+        내재되어 있던 강력한 힘이 저절로 깨어납니다.
+      </p>
+
+      <div class="flex space-x-4 pt-4">
+        <a href="/chat-experience" class="px-6 py-3 text-lg rounded-2xl bg-indigo-600 text-white shadow-md hover:bg-indigo-700 transition">
+          나를 위한 대화
+        </a>
+        <a href="/workcare-solution" class="px-6 py-3 text-lg rounded-2xl bg-gray-100 text-indigo-600 shadow-md hover:bg-gray-200 transition">
+          워크케어 솔루션
+        </a>
       </div>
-    </div>
-  </div>
 
-  <!-- 개인 상담 섹션 -->
-  <section id="personal">
-    <h2>나를 위한 대화</h2>
-    <img class="section-image" src="https://images.pexels.com/photos/8613080/pexels-photo-8613080.jpeg?auto=compress&cs=tinysrgb&h=500" alt="학생 감성 이미지">
-    <div class="section-text">
-      어린이부터 청소년, 누구든 혼자 있고 싶은 날이 있죠.<br>
-      나만을 위한 대화, 지금 Best Friend와 함께해보세요.
+      <p class="text-sm text-gray-400 pt-3">
+        개인정보는 안전하게 보호됩니다.
+      </p>
     </div>
   </section>
-
-  <!-- 재직자 워크케어 섹션 -->
-  <section id="workcare">
-    <h2>워크케어 솔루션</h2>
-    <img class="section-image" src="https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&h=500" alt="직장 이미지">
-    <div class="section-text">
-      함께 일하는 동료들 사이에도 감정은 존재합니다.<br>
-      정서적 회복을 통한 몰입 향상, 조직 문화 개선까지.<br>
-      지금 워크케어 솔루션을 만나보세요.
-    </div>
-  </section>
-
-  <script>
-    const texts = [
-      "지금, 당신에게 필요한 건 따뜻한 연결입니다.",
-      "친구처럼, 동료처럼, 내 편이 되어주는 AI.",
-      "혼자가 아니에요. 마음을 회복하는 첫 걸음.",
-      "내면의 힘을 깨우는 감성 상담 Best Friend",
-      "함께하는 마음의 공간 - Intuit Best Friend"
-    ];
-
-    let i = 0;
-    const el = document.getElementById("animated-text");
-
-    function rotateText() {
-      el.style.opacity = 0;
-      setTimeout(() => {
-        el.innerText = texts[i];
-        el.style.opacity = 1;
-        i = (i + 1) % texts.length;
-      }, 300);
-    }
-
-    rotateText();
-    setInterval(rotateText, 5000);
-
-    function showSection(sectionId) {
-      document.getElementById('personal').classList.remove('visible');
-      document.getElementById('workcare').classList.remove('visible');
-      document.getElementById(sectionId).classList.add('visible');
-      window.scrollTo({ top: document.getElementById(sectionId).offsetTop, behavior: 'smooth' });
-    }
-  </script>
-
 </body>
 </html>
