@@ -2,64 +2,115 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>재직자 프로그램 신청</title>
   <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
   <style>
-    body {
+    body, html {
       margin: 0;
+      padding: 0;
+      height: 100%;
       font-family: 'Gowun Dodum', sans-serif;
-      background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      background: url('https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
       color: #fff;
-      height: 100vh;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      min-height: 100vh;
+      padding: 40px 20px;
       text-align: center;
     }
-    .box {
-      background-color: rgba(0, 0, 0, 0.65);
-      padding: 30px;
+
+    h1 {
+      font-size: 4.8rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 2.4rem;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    input, button {
+      font-size: 2rem;
+      padding: 14px 20px;
+      margin: 10px;
       border-radius: 10px;
-    }
-    input {
-      padding: 10px;
-      border-radius: 6px;
-      margin-top: 10px;
-    }
-    button {
-      margin-top: 15px;
-      padding: 10px 20px;
-      background-color: #f59e0b;
       border: none;
-      border-radius: 6px;
+      width: 90%;
+      max-width: 500px;
+    }
+
+    button {
+      background-color: #f59e0b;
       color: white;
       cursor: pointer;
     }
-    a.home {
-      position: absolute;
+
+    button:hover {
+      background-color: #d97706;
+    }
+
+    .file-upload {
+      margin-top: 10px;
+      font-size: 1.8rem;
+      color: #fff;
+    }
+
+    .note {
+      margin-top: 20px;
+      font-size: 1.6rem;
+      color: #fcd34d;
+    }
+
+    .home-link {
+      position: fixed;
       top: 20px;
-      left: 20px;
-      color: white;
+      right: 20px;
+      background: #f59e0b;
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      background: #f59e0b;
-      padding: 8px 12px;
-      border-radius: 6px;
+      font-size: 1.4rem;
     }
   </style>
 </head>
 <body>
-  <a href="index.html" class="home">홈으로</a>
-  <div class="box">
+  <div class="overlay"></div>
+  <a href="index.html" class="home-link">홈으로</a>
+  <div class="container">
     <h1>재직자 프로그램 신청</h1>
-    <p>워크케어 솔루션은 직장인의 감정 회복과 역량 향상을 돕는 맞춤형 프로그램입니다.<br>
-    공무원 포함 모든 재직자가 신청할 수 있으며, 아래 정보를 입력하시면 견적서 상담을 도와드립니다.</p>
-    <input type="text" placeholder="회사명 / 기관명"><br>
-    <input type="text" placeholder="담당자 이름"><br>
-    <input type="text" placeholder="전화번호"><br>
+    <p>
+      워크케어 솔루션은 직장인의 감정 회복과 역량 향상을 돕는 맞춤형 프로그램입니다.<br>
+      공무원을 포함한 모든 재직자가 신청 가능합니다.
+    </p>
+    <input type="text" placeholder="회사명 / 기관명" />
+    <input type="text" placeholder="담당자 이름" />
+    <input type="tel" placeholder="전화번호" />
+    <div class="file-upload">
+      <label>재직자 리스트 업로드 (선택)</label><br>
+      <input type="file" />
+    </div>
     <button>견적 상담 신청하기</button>
-    <p style="margin-top:10px;">※ 입력하신 개인정보는 안전하게 보호되며 외부에 노출되지 않습니다.</p>
+    <div class="note">
+      ※ 입력하신 개인정보는 안전하게 보호되며 외부에 노출되지 않습니다.
+    </div>
   </div>
 </body>
 </html>
