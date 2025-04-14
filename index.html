@@ -7,28 +7,30 @@ export default function SelfChat() {
   return (
     <div className="w-full h-screen flex flex-col justify-center items-start bg-gradient-to-l from-yellow-50 to-white p-10 relative overflow-hidden">
       <img
-        src="https://images.unsplash.com/photo-1503264116251-35a269479413"
+        src="https://images.unsplash.com/photo-1505483531331-fc3cf89fd382?auto=format&fit=crop&w=1600&q=80"
         alt="배경 이미지"
         className="absolute inset-0 w-full h-full object-cover opacity-30 z-0"
       />
-      <motion.h1 
-        initial={{ opacity: 0, x: -50 }} 
-        animate={{ opacity: 1, x: 0 }} 
+      <motion.h1
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 2 }}
         className="text-4xl md:text-5xl font-bold mb-6 text-amber-600 z-10"
       >
         나를 위한 대화 체험하기
       </motion.h1>
-      <motion.p 
-        initial={{ opacity: 0 }} 
-        animate={{ opacity: 1 }} 
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 2 }}
         className="text-lg max-w-xl mb-6 text-amber-700 z-10"
       >
         당신의 감각을 깨우는 체험을 시작해보세요. 전화번호를 입력하시면 바로 체험이 가능합니다.
       </motion.p>
       <Input placeholder="전화번호를 입력하세요" className="mb-4 w-96 z-10" />
-      <Button className="text-lg px-6 py-2 rounded-xl bg-amber-500 hover:bg-amber-600 text-white z-10">체험 시작하기</Button>
+      <Button className="text-lg px-6 py-2 rounded-xl bg-amber-500 hover:bg-amber-600 text-white z-10">
+        체험 시작하기
+      </Button>
       <p className="text-sm text-gray-600 mt-4 z-10">
         ※ 입력하신 개인정보는 안전하게 보호되며 외부에 노출되지 않습니다.
       </p>
@@ -40,21 +42,21 @@ export function Workcare() {
   return (
     <div className="w-full h-screen flex flex-col justify-center items-start bg-gradient-to-r from-white to-yellow-50 p-10 relative overflow-hidden">
       <img
-        src="https://images.unsplash.com/photo-1531379410502-63bfe8cdafbc"
+        src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80"
         alt="워크케어 배경 이미지"
         className="absolute inset-0 w-full h-full object-cover opacity-30 z-0"
       />
-      <motion.h1 
-        initial={{ opacity: 0, x: -50 }} 
-        animate={{ opacity: 1, x: 0 }} 
+      <motion.h1
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 2 }}
         className="text-4xl md:text-5xl font-bold mb-6 text-yellow-700 z-10"
       >
         재직자 프로그램 신청
       </motion.h1>
-      <motion.p 
-        initial={{ opacity: 0 }} 
-        animate={{ opacity: 1 }} 
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 2 }}
         className="text-lg max-w-2xl mb-6 text-yellow-800 z-10"
       >
@@ -68,7 +70,9 @@ export function Workcare() {
         <label className="block mb-1 text-sm font-medium text-gray-700">재직자 리스트 업로드 (선택)</label>
         <input type="file" className="block w-full text-sm text-gray-700 border border-gray-300 rounded-lg cursor-pointer bg-white" />
       </div>
-      <Button className="text-lg px-6 py-2 rounded-xl bg-yellow-500 hover:bg-yellow-600 text-white z-10">견적 상담 신청하기</Button>
+      <Button className="text-lg px-6 py-2 rounded-xl bg-yellow-500 hover:bg-yellow-600 text-white z-10">
+        견적 상담 신청하기
+      </Button>
       <p className="text-sm text-gray-600 mt-4 z-10">
         ※ 입력하신 개인정보는 안전하게 보호되며 외부에 노출되지 않습니다.
       </p>
