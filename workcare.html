@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>워크케어 프로그램</title>
   <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
   <style>
@@ -11,19 +11,7 @@
       padding: 0;
       height: 100%;
       font-family: 'Gowun Dodum', sans-serif;
-    }
-
-    .hero {
-      position: relative;
-      height: 100vh;
-      background: url('https://images.unsplash.com/photo-1600891965050-6ec2b438b381?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      color: #fff;
-      text-align: center;
-      padding: 0 20px;
+      background: url('https://images.unsplash.com/photo-1505483531331-fc3cf89fd382?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
     }
 
     .overlay {
@@ -33,89 +21,81 @@
       z-index: 0;
     }
 
-    .content {
+    .container {
+      position: relative;
       z-index: 1;
-      max-width: 800px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+      text-align: center;
+      padding: 0 20px;
     }
 
-    h1 {
-      font-size: 2rem;
-      font-weight: bold;
+    .headline {
+      font-size: 2.4rem;
+      font-weight: 700;
       margin-bottom: 30px;
     }
 
-    p {
-      font-size: 2rem;
+    .text-block {
+      font-size: 1.6rem;
       line-height: 1.8;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
+      max-width: 800px;
+      animation: fadeInUp 2s ease-in-out forwards;
+      opacity: 0;
     }
 
-    input, label {
-      display: block;
-      margin: 14px auto;
-      font-size: 1.8rem;
-      padding: 12px;
-      width: 80%;
-      max-width: 400px;
-      border: none;
-      border-radius: 8px;
+    .text-block:nth-child(2) { animation-delay: 0.5s; }
+    .text-block:nth-child(3) { animation-delay: 1.5s; }
+    .text-block:nth-child(4) { animation-delay: 2.5s; }
+    .text-block:nth-child(5) { animation-delay: 3.5s; }
+    .text-block:nth-child(6) { animation-delay: 4.5s; }
+    .text-block:nth-child(7) { animation-delay: 5.5s; }
+    .text-block:nth-child(8) { animation-delay: 6.5s; }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    input[type="file"] {
-      background-color: #fff;
+    .buttons {
+      margin-top: 50px;
     }
 
-    button {
-      padding: 16px 40px;
-      font-size: 1.8rem;
+    .btn {
+      margin: 0 10px;
+      padding: 15px 30px;
       background-color: #f59e0b;
       color: white;
       border: none;
       border-radius: 10px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #d97706;
-    }
-
-    .home-link {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #f59e0b;
-      color: #fff;
-      padding: 10px 16px;
-      border-radius: 8px;
+      font-size: 1.2rem;
       text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
-      z-index: 10;
+      transition: background-color 0.3s ease;
     }
 
-    .note {
-      margin-top: 20px;
-      font-size: 1rem;
-      color: #eee;
+    .btn:hover {
+      background-color: #d97706;
     }
   </style>
 </head>
 <body>
-  <a href="index.html" class="home-link">홈으로</a>
-  <div class="hero">
-    <div class="overlay"></div>
-    <div class="content">
-      <h1>재직자 프로그램 신청</h1>
-      <p>워크케어 솔루션은 직장인의 감정 회복과 역량 향상을 돕는 맞춤형 프로그램입니다.<br>
-      공무원 포함 모든 재직자가 신청할 수 있으며, 아래 정보를 입력하시면 견적서 상담을 도와드립니다.</p>
-      <input type="text" placeholder="회사명 / 기관명" />
-      <input type="text" placeholder="담당자 이름" />
-      <input type="tel" placeholder="전화번호" />
-      <label>재직자 리스트 업로드 (선택)</label>
-      <input type="file" />
-      <br />
-      <button>견적 상담 신청하기</button>
-      <div class="note">※ 입력하신 개인정보는 안전하게 보호되며 외부에 노출되지 않습니다.</div>
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="headline">AI 감각회복 마음치료 상담<br>“워크케어 프로그램”</div>
+
+    <div class="text-block">AI 감각회복 상담은<br>조직 내 관계 개선과 팀워크 증진을 돕습니다.</div>
+    <div class="text-block">정서적 안정과 집중력 향상으로<br>직무 성과 향상에 기여합니다.</div>
+    <div class="text-block">개인의 삶의 만족도 향상은<br>조직 전체의 에너지로 확산됩니다.</div>
+    <div class="text-block">워크케어는<br>모든 재직자를 위한 실질적인 힐링 프로그램입니다.</div>
+    <div class="text-block">지금, 감정회복과 역량 향상을 위한<br>워크케어 상담을 신청해보세요.</div>
+
+    <div class="buttons">
+      <a href="index.html" class="btn">홈으로</a>
     </div>
   </div>
 </body>
