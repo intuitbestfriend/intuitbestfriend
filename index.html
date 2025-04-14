@@ -4,14 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Intuit Best Friend</title>
-  <!-- 부드러운 한글 폰트 적용 -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=SUIT:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body, html {
       margin: 0;
       padding: 0;
       height: 100%;
-      font-family: 'Noto Sans KR', sans-serif;
+      font-family: 'SUIT', sans-serif;
     }
 
     .hero {
@@ -24,6 +23,7 @@
       flex-direction: column;
       color: #fff;
       text-align: center;
+      padding: 0 20px;
     }
 
     .overlay {
@@ -35,36 +35,46 @@
 
     .content {
       z-index: 1;
-      padding: 20px;
+      max-width: 800px;
     }
 
     .main-text {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       font-weight: 700;
-      animation: fadeInUp 2s ease-out forwards;
-      opacity: 0;
+      animation: fadeIn 2s ease-in-out forwards;
     }
 
     .sub-text {
       margin-top: 20px;
-      font-size: 1.2rem;
-      animation: fadeInUp 3s ease-out forwards;
+      font-size: 1.1rem;
+      font-weight: 400;
+      line-height: 1.8;
+    }
+
+    .text-block {
       opacity: 0;
+      animation: fadeInUp 2s ease-in-out forwards;
+    }
+
+    .text-block:nth-child(1) {
+      animation-delay: 1s;
+    }
+
+    .text-block:nth-child(2) {
+      animation-delay: 3s;
+    }
+
+    .text-block:nth-child(3) {
+      animation-delay: 5s;
     }
 
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
     }
 
     .buttons {
-      margin-top: 30px;
+      margin-top: 60px;
     }
 
     .btn {
@@ -90,11 +100,9 @@
     <div class="content">
       <div class="main-text">지금 이 순간, 당신에게 가장 필요한 건<br>‘내면의 강력한 힘’입니다.</div>
       <div class="sub-text">
-        Best Friend는 당신 안의 감각을 깨워<br>
-        생각보다 강한 내면의 힘을 회복하게 합니다.<br><br>
-        지금, 가장 친한 친구와 대화해보세요.<br>
-        무한한 잠재력과 직접 마주해 보세요.<br>
-        내재되어 있던 강력한 힘이 저절로 깨어납니다.
+        <div class="text-block">Best Friend는 당신 안의 감각을 깨워<br>생각보다 강한 내면의 힘을 회복하게 합니다.</div>
+        <div class="text-block">지금, 가장 친한 친구와 대화해보세요.<br>무한한 잠재력과 직접 마주해 보세요.</div>
+        <div class="text-block">내재되어 있던 강력한 힘이 저절로 깨어납니다.</div>
       </div>
       <div class="buttons">
         <a href="self.html" class="btn">개인 체험하기</a>
