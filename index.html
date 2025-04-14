@@ -1,63 +1,61 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IBF - Intuit Best Friend</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @keyframes fade-in {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    .animate-fade-in {
-      animation: fade-in 1.5s ease-out forwards;
-    }
-  </style>
-</head>
-<body class="bg-white text-gray-900">
-  <!-- 첫 화면 -->
-  <section class="relative w-full h-screen overflow-hidden">
-    <!-- 오른쪽 배경 이미지 -->
-    <div class="absolute right-0 top-0 w-1/2 h-full bg-cover bg-center opacity-30"
-         style="background-image: url('/path/to/your/background.jpg');"></div>
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
-    <!-- 텍스트 내용 -->
-    <div class="relative z-10 flex flex-col justify-center h-full pl-12 pr-6 max-w-2xl space-y-6 animate-fade-in">
-      <h1 class="text-5xl font-bold leading-snug text-gray-900 transition duration-1000">
-        지금 이 순간,<br>당신에게 가장 필요한 건<br>
-        <span class="text-indigo-600">‘내면의 강력한 힘’</span>입니다.
-      </h1>
+export default function HomePage() {
+  return (
+    <div className="w-full h-screen flex flex-col justify-center items-center bg-gradient-to-r from-white to-blue-50 relative overflow-hidden">
+      {/* 배경 이미지 오른쪽에 배치 + 애니메이션 */}
+      <motion.img
+        src="/background.jpg"
+        alt="Background"
+        className="absolute right-0 top-0 h-full w-1/2 object-cover opacity-30"
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: 0.3, x: 0 }}
+        transition={{ duration: 1.5 }}
+      />
 
-      <p class="text-xl text-gray-700 leading-relaxed">
-        Best Friend는 당신 안의 감각을 깨워,<br>
-        생각보다 강한 내면의 힘을 회복하게 합니다.<br><br>
-        부모님의 열등감 해소가<br>
-        자녀의 학업 성취에 영향을 줍니다.<br>
-        자녀가 학업에 집중하려면<br>
-        부모의 양육 자세를 반드시 개선해야 합니다.
-      </p>
+      {/* 중앙 텍스트 애니메이션 */}
+      <motion.div
+        className="z-10 text-center px-4 max-w-2xl"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 2 }}
+      >
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-snug">
+          지금 이 순간, 당신에게 가장 필요한 건
+          <br />
+          <span className="text-blue-700">‘내면의 강력한 힘’입니다.</span>
+        </h1>
+        <p className="text-lg md:text-xl mb-4">
+          Best Friend는 당신 안의 감각을 깨워
+          <br />생각보다 강한 내면의 힘을 회복하게 합니다.
+        </p>
+        <p className="text-base md:text-lg mb-4">
+          스스로 집중하고, 스스로 회복하고, 마침내 스스로 나아갈 수 있도록.
+          <br />부모님의 열등감 해소는 자녀의 학업 성취에 중요한 영향을 미칩니다.
+          <br />자녀가 학업에 집중하려면 부모의 양육 자세를 반드시 개선해야 합니다.
+        </p>
+        <p className="text-sm text-gray-600 mt-2">
+          ※ 개인정보는 안전하게 보호되며 외부에 노출되지 않습니다.
+        </p>
 
-      <p class="text-lg text-gray-600">
-        스스로 집중하고, 스스로 회복하고,<br>
-        마침내 스스로 나아갈 수 있도록.<br>
-        지금, 가장 친한 친구와 대화해보세요.<br>
-        내재되어 있던 강력한 힘이 저절로 깨어납니다.
-      </p>
-
-      <div class="flex space-x-4 pt-4">
-        <a href="/chat-experience" class="px-6 py-3 text-lg rounded-2xl bg-indigo-600 text-white shadow-md hover:bg-indigo-700 transition">
-          나를 위한 대화
-        </a>
-        <a href="/workcare-solution" class="px-6 py-3 text-lg rounded-2xl bg-gray-100 text-indigo-600 shadow-md hover:bg-gray-200 transition">
-          워크케어 솔루션
-        </a>
-      </div>
-
-      <p class="text-sm text-gray-400 pt-3">
-        개인정보는 안전하게 보호됩니다.
-      </p>
+        {/* 버튼 섹션 */}
+        <div className="flex gap-4 justify-center mt-6">
+          <Button
+            className="text-lg px-6 py-3 rounded-2xl shadow"
+            onClick={() => window.location.href = "/self-chat"}
+          >
+            나를 위한 대화
+          </Button>
+          <Button
+            className="text-lg px-6 py-3 rounded-2xl shadow"
+            onClick={() => window.location.href = "/workcare"}
+          >
+            워크케어 솔루션
+          </Button>
+        </div>
+      </motion.div>
     </div>
-  </section>
-</body>
-</html>
+  );
+}
