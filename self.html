@@ -2,8 +2,8 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>나를 위한 대화</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>베스트프렌드</title>
   <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
   <style>
     body, html {
@@ -11,99 +11,90 @@
       padding: 0;
       height: 100%;
       font-family: 'Gowun Dodum', sans-serif;
-    }
-
-    .hero {
-      position: relative;
-      height: 100vh;
-      background: url('https://images.unsplash.com/photo-1600880292089-90a7e086ee7e?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      color: #fff;
-      text-align: center;
-      padding: 0 20px;
+      background: url('https://images.unsplash.com/photo-1533116887114-dc2d4baf16ef?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
     }
 
     .overlay {
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: rgba(0, 0, 0, 0.5);
       z-index: 0;
     }
 
-    .content {
+    .container {
+      position: relative;
       z-index: 1;
-      max-width: 900px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+      text-align: center;
+      padding: 0 20px;
     }
 
-    h1 {
-      font-size: 3rem;
+    .headline {
+      font-size: 2.4rem;
       font-weight: 700;
       margin-bottom: 30px;
     }
 
-    p {
-      font-size: 2rem;
-      margin-bottom: 40px;
+    .text-block {
+      font-size: 1.6rem;
+      line-height: 1.8;
+      margin-bottom: 30px;
+      max-width: 800px;
+      animation: fadeInUp 2s ease-in-out forwards;
+      opacity: 0;
     }
 
-    input {
-      font-size: 1.6rem;
-      padding: 14px;
-      width: 280px;
-      border-radius: 10px;
-      border: none;
-      margin-bottom: 20px;
+    .text-block:nth-child(2) { animation-delay: 0.5s; }
+    .text-block:nth-child(3) { animation-delay: 1.5s; }
+    .text-block:nth-child(4) { animation-delay: 2.5s; }
+    .text-block:nth-child(5) { animation-delay: 3.5s; }
+    .text-block:nth-child(6) { animation-delay: 4.5s; }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    button {
-      font-size: 1.6rem;
-      padding: 14px 28px;
+    .buttons {
+      margin-top: 50px;
+    }
+
+    .btn {
+      margin: 0 10px;
+      padding: 15px 30px;
       background-color: #f59e0b;
       color: white;
       border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #d97706;
-    }
-
-    .note {
+      border-radius: 10px;
       font-size: 1.2rem;
-      margin-top: 20px;
-      opacity: 0.8;
-    }
-
-    .home-link {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #f59e0b;
-      color: #fff;
-      padding: 10px 16px;
-      border-radius: 8px;
       text-decoration: none;
-      font-weight: bold;
-      font-size: 1.2rem;
-      z-index: 10;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #d97706;
     }
   </style>
 </head>
 <body>
-  <a href="index.html" class="home-link">홈으로</a>
-  <div class="hero">
-    <div class="overlay"></div>
-    <div class="content">
-      <h1>나를 위한 대화 체험하기</h1>
-      <p>당신의 감각을 깨우는 체험을 시작해보세요.<br>전화번호를 입력하시면 바로 체험이 가능합니다.</p>
-      <input type="text" placeholder="전화번호를 입력하세요">
-      <br>
-      <button>체험 시작하기</button>
-      <div class="note">※ 입력하신 개인정보는 안전하게 보호되며 외부에 노출되지 않습니다.</div>
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="headline">감각회복 AI 마음치료 상담자<br>“베스트프렌드”</div>
+
+    <div class="text-block">생각을 바꾸려는 상담,<br>그게 왜 잘 안 되는지 느껴보셨나요?</div>
+    <div class="text-block">TV 속 쇼처럼 한두 마디로 위로하고<br>“이제 괜찮아질 거예요”로 끝나는 상담.</div>
+    <div class="text-block">머리로는 이해했지만<br>마음과 몸은 따라오지 않았던 경험.</div>
+    <div class="text-block">그것이 기존 인지행동치료의 한계입니다.</div>
+    <div class="text-block">베스트프렌드는 당신 안의 감각을 깨워<br>스스로 회복하고 나아갈 수 있게 돕습니다.</div>
+
+    <div class="buttons">
+      <a href="self.html" class="btn">개인 체험하기</a>
+      <a href="workcare.html" class="btn">재직자 프로그램</a>
     </div>
   </div>
 </body>
