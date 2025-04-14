@@ -4,13 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Intuit Best Friend</title>
-  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
   <style>
     body, html {
       margin: 0;
       padding: 0;
       height: 100%;
-      font-family: 'Gowun Dodum', sans-serif;
+      font-family: 'Pretendard', sans-serif;
     }
 
     .hero {
@@ -23,7 +22,6 @@
       flex-direction: column;
       color: #fff;
       text-align: center;
-      padding: 0 20px;
     }
 
     .overlay {
@@ -35,56 +33,38 @@
 
     .content {
       z-index: 1;
-      max-width: 900px;
+      padding: 20px;
     }
 
     .main-text {
-      font-size: 2rem;
-      font-weight: 700;
-      animation: fadeIn 2s ease-in-out forwards;
+      font-size: 2.5rem;
+      font-weight: bold;
+      animation: fadeIn 3s ease-in-out forwards;
     }
 
     .sub-text {
-      margin-top: 40px;
-      font-size: 2rem;
-      font-weight: 400;
-      line-height: 1.8;
+      margin-top: 20px;
+      font-size: 1.2rem;
+      animation: fadeIn 4s ease-in-out forwards;
     }
 
-    .text-block {
-      opacity: 0;
-      animation: fadeInUp 2s ease-in-out forwards;
-    }
-
-    .text-block:nth-child(1) {
-      animation-delay: 1s;
-    }
-
-    .text-block:nth-child(2) {
-      animation-delay: 3s;
-    }
-
-    .text-block:nth-child(3) {
-      animation-delay: 5s;
-    }
-
-    @keyframes fadeInUp {
-      from {opacity: 0; transform: translateY(30px);}
-      to {opacity: 1; transform: translateY(0);}
+    @keyframes fadeIn {
+      0% {opacity: 0; transform: translateY(20px);}
+      100% {opacity: 1; transform: translateY(0);}
     }
 
     .buttons {
-      margin-top: 120px;
+      margin-top: 30px;
     }
 
     .btn {
       margin: 0 10px;
-      padding: 20px 40px;
+      padding: 12px 24px;
       background-color: #f59e0b;
       color: white;
       border: none;
-      border-radius: 10px;
-      font-size: 1.4rem;
+      border-radius: 8px;
+      font-size: 1rem;
       text-decoration: none;
       transition: background-color 0.3s ease;
     }
@@ -92,42 +72,19 @@
     .btn:hover {
       background-color: #d97706;
     }
-
-    .home-link {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #f59e0b;
-      color: #fff;
-      padding: 10px 16px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
-    }
   </style>
 </head>
 <body>
-  <a href="index.html" class="home-link">홈으로</a>
   <div class="hero">
     <div class="overlay"></div>
     <div class="content">
-      <div class="main-text">
-        지금 이 순간, 당신에게 가장 필요한 건<br>
-        ‘내면의 강력한 힘’입니다.
-      </div>
+      <div class="main-text">지금 이 순간, 당신에게 가장 필요한 건<br>‘내면의 강력한 힘’입니다.</div>
       <div class="sub-text">
-        <div class="text-block">
-          Best Friend는 당신 안의 감각을 깨워<br>
-          생각보다 강한 내면의 힘을 회복하게 합니다.
-        </div>
-        <div class="text-block">
-          지금, 가장 친한 친구와 대화해보세요.<br>
-          무한한 잠재력과 직접 마주해 보세요.
-        </div>
-        <div class="text-block">
-          내재되어 있던 강력한 힘이 저절로 깨어납니다.
-        </div>
+        Best Friend는 당신 안의 감각을 깨워<br>
+        생각보다 강한 내면의 힘을 회복하게 합니다.<br><br>
+        지금, 가장 친한 친구와 대화해보세요.<br>
+        무한한 잠재력과 직접 마주해 보세요.<br>
+        내재되어 있던 강력한 힘이 저절로 깨어납니다.
       </div>
       <div class="buttons">
         <a href="self.html" class="btn">개인 체험하기</a>
